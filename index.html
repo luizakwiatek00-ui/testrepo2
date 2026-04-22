@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting Cost</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- VIEW: MAIN -->
+  <div id="view-main" class="view active">
+    <header class="app-header">
+      <h1>Meeting Cost</h1>
+      <button class="btn-icon" id="btn-settings" aria-label="Ustawienia">&#9881;</button>
+    </header>
+
+    <main class="roles-grid" id="roles-grid"></main>
+
+    <footer class="sticky-footer">
+      <div class="hourly-preview">
+        Stawka: <span id="hourly-preview">0,00 zł</span>/h
+        &nbsp;·&nbsp;
+        Uczestnicy: <span id="participants-preview">0</span>
+      </div>
+      <button class="btn-primary" id="btn-start">Start</button>
+    </footer>
+  </div>
+
+  <!-- VIEW: ACTIVE -->
+  <div id="view-active" class="view">
+    <header class="app-header">
+      <button class="btn-icon" id="btn-reset" aria-label="Reset">&#8635;</button>
+      <h1>Trwa spotkanie</h1>
+      <div style="width:44px"></div>
+    </header>
+
+    <main class="active-main">
+      <div class="cost-display" id="cost-display">0,00 zł</div>
+      <div class="time-display" id="time-display">00:00:00</div>
+      <div class="active-stats">
+        <span>Uczestnicy: <strong id="active-participants">0</strong></span>
+        <span>Stawka: <strong id="active-rate">0,00 zł</strong>/h</span>
+      </div>
+    </main>
+
+    <footer class="sticky-footer">
+      <button class="btn-secondary" id="btn-pause">Pauza</button>
+    </footer>
+  </div>
+
+  <!-- VIEW: SETTINGS -->
+  <div id="view-settings" class="view">
+    <header class="app-header">
+      <button class="btn-icon" id="btn-back" aria-label="Wróć">&#8592;</button>
+      <h1>Ustawienia</h1>
+      <div style="width:44px"></div>
+    </header>
+
+    <main class="settings-main">
+      <section class="settings-section">
+        <h2>Waluta</h2>
+        <div class="currency-selector">
+          <label><input type="radio" name="currency" value="PLN" /> PLN</label>
+          <label><input type="radio" name="currency" value="EUR" /> EUR</label>
+          <label><input type="radio" name="currency" value="USD" /> USD</label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Role i stawki</h2>
+        <div id="roles-settings"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
